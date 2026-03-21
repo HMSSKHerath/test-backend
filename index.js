@@ -12,7 +12,7 @@ const connectionString = "mongodb+srv://Admin:1234@cluster0.kr0gbz0.mongodb.net/
 mongoose.connect(connectionString)
 .then(() =>
 {
-    console.log("Database connected !");
+    console.log("Database connected Successfully !");
 })
 .catch(() =>
 {
