@@ -8,7 +8,7 @@ import productRouter from './routes/productRoute.js';
 const app = express();
 
 // Connection string for MongoDB Atlas
-const connectionString = "mongodb+srv://Admin:1234@cluster0.kr0gbz0.mongodb.net/?appName=Cluster0";
+const connectionString = "";
 mongoose.connect(connectionString)
 .then(() =>
 {
