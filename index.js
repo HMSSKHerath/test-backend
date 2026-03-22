@@ -40,16 +40,14 @@ app.use((req, res, next) =>
 
     jwt.verify(token, "jwt secret", (err, decoded) =>
     {
-        if(decoded == null)
+        if(!decoded)
         {
             res.json({ message: "Unauthorized Access !" });
             return;
         }
-        else
-        {
-            req.user = decoded;
-            next();
-        }
+
+        req.user = decoded;
+        next();
     })
 })
 

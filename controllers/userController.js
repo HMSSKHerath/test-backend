@@ -2,9 +2,19 @@ import User from "../models/userModel.js";
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
-export function getUser(req, res) 
+export async function getUser(req, res) 
 {
-    
+    try 
+    {
+        const users = await User.find();
+        res.status(200).json(users);
+        
+    } 
+    catch (err) 
+    {
+        console.error(err);
+        res.status(500).json({ message: "Failed to fetch users !" });
+    }
 }
 
 export async function createUser(req, res)
