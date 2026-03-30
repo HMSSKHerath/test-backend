@@ -28,7 +28,7 @@ mongoose.connect(connectionString)
 // Middleware to parse JSON bodies
 app.use(express.json());
 
-app.use('/users', userRouter);
+app.use('/api/users', userRouter);
 
 
 
@@ -57,7 +57,7 @@ app.use((req, res, next) =>
     })
 })
 
-app.use('/products', productRouter);
+app.use('/api/products', productRouter);
 
 // Start the server
 app.listen(3000, () =>{
