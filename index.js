@@ -1,14 +1,20 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import jwt from 'jsonwebtoken';
+import cors from 'cors';
 import userRouter from './routes/userRoute.js';
 import productRouter from './routes/productRoute.js';
+import dotenv from 'dotenv';
 
+dotenv.config();
 
 const app = express();
 
+// Enable CORS for all routes
+app.use(cors());
+
 // Connection string for MongoDB Atlas
-const connectionString = "";
+const connectionString = process.env.MongoDB_Url;
 mongoose.connect(connectionString)
 .then(() =>
 {
