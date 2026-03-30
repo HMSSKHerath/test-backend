@@ -44,7 +44,7 @@ app.use((req, res, next) =>
 
     token = token.replace("Bearer ", "");
 
-    jwt.verify(token, "jwt secret", (err, decoded) =>
+    jwt.verify(token, process.env.JWT_SECRET, (err, decoded) =>
     {
         if(!decoded)
         {

@@ -71,7 +71,7 @@ export async function loginUser(req, res)
             role: foundUser.role,
             isEmailVerified: foundUser.isEmailVerified
         },
-        "jwt secret"
+        process.env.JWT_SECRET
         );
 
         res.status(200).json(
