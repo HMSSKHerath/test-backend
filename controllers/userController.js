@@ -77,7 +77,14 @@ export async function loginUser(req, res)
         res.status(200).json(
         {
             message: "Login Successful !",
-            token: token
+            token: token,
+            user:{
+                email: foundUser.email,
+                firstName: foundUser.firstName,
+                lastName: foundUser.lastName,
+                role: foundUser.role,
+                isEmailVerified: foundUser.isEmailVerified
+            }
         });
     }
     catch(error)
